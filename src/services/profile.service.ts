@@ -17,7 +17,8 @@ private clientsecret='20ee09e7af46a2bcbe727a3a828716e0659269a2';
     this.username = 'cinston';
    }
 getProfileInfo(){
-  return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret);
+  return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+  .map(res => res.json());
  }
 
 }
