@@ -9,11 +9,12 @@ import { GitProfileComponent } from './git-profile/git-profile.component';
 @NgModule({
   declarations: [
     AppComponent,
-    GitProfileComponent,
-    HttpModule
+    GitProfileComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule 
+      
   ],
   providers: [ProfileService],
   bootstrap: [AppComponent]
