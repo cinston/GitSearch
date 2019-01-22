@@ -2,17 +2,41 @@
   <div class="panel panel-default">
     <div class="panel-heading">
        {{profile.name}} <small>{{profile.login}}</small>
-       <span *ngIf="profile.company">, works at {{profile.company}}</span>
+       <span *ngIf="profile.company">, Works at {{profile.company}}</span>
        {{profile.location}}
-    </div>
+      </div>
     <div class="panel-body">
       <div class="row">
         <div class="col-sm-3">
-          <img src="{{profile.avatar_url}}" class="img-rounded img-responsive"  alt="Profile picture">
+          <img src="{{profile.avatar_url}}" class="img-rounded img-responsive" alt="Profile picture">
+
+        </div>
+        <div class="col-sm-5">
+          <ul class="list-group">
+            <li class="list-group-item" *ngIf="profile.bio">{{profile.bio}}</li>
+            <li class="list-group-item" *ngIf="profile.hireable">Jobless, in need of somewhere to put my great skills to use</li>
+            <li class="list-group-item" *ngIf="profile.blog"><a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>
+            <li class="list-group-item" *ngIf="profile.email"><a href="emailto:{{profile.email}}">{{profile.email}}</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <p>
+            <span class="label label-success">{{profile.followers}} followers </span>
+            <span class="label label-success">{{profile.following}} following </span>
+            <span class="label label-success">{{profile.public_gists}} public gists </span>
+            <span class="label label-success">{{profile.public_repos}} public repos </span>
+          </p>
+          <p><a href="{{profile.html_url}}" class="btn btn-info btn-sm">Check profile on Github</a></p>
+          <div class="panel panel-default"> 
+            <div class="panel-heading">
+              <h3 class="panel-title">Repos</h3>
+            </div>  
+            <div class="panel-body" *ngFor=>
+
+            </div>
         </div>
       </div>
-
     </div>
-
+     
   </div>
 </div> 
