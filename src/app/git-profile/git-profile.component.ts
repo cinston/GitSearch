@@ -7,12 +7,14 @@ import { ProfileService } from '../../services/profile.service'
   styleUrls: ['./git-profile.component.css']
 })
 export class GitProfileComponent implements OnInit {
+  profile:any[];
 
   constructor(private profileService: ProfileService) { 
-    this.profileService.getProfileInfo().subscribe(profile =>(
-     console.log(profile)  
+    this.profileService.getProfileInfo().subscribe(profile =>{
+      console.log(profile);
+      this.profile = profile; 
 
-    ));
+    });
 
   }
 
